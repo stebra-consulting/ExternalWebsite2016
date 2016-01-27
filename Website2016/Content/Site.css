@@ -5,10 +5,7 @@
 }
 
 /* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -80,7 +77,7 @@ textarea {
     color:#337ab7 !important;
 }
 
-.jumbotron { 
+.header { 
     height:400px;
     background: url('../Images/Slider/beach.jpg') no-repeat center center; 
     -webkit-background-size: cover;
