@@ -52,16 +52,17 @@
         </div>
     </div>
     <div class="panel-body news">
-        <div class="col-lg-12">
-            <h3 style="color:black">@sortedEntries[0].Title</h3>
+        <div class="col-lg-6">
             <img src="@sortedEntries[0].Image" alt="firstImage" />
-            <p>
-                @Html.Raw(@sortedEntries[0].Body)
-            </p>
-            <a href="http://newsflashon.azurewebsites.net/Home/Nyheter/look-at-this-splendid-office">Link to Article (hårdkodad)</a>
-            <p><i>@Html.Raw(@sortedEntries[0].Date) @Html.Raw(@sortedEntries[0].Article)</i></p>
         </div>
-    </div>
+        <div class="col-lg-6">
+    <h3 style="color:black">@sortedEntries[0].Title</h3>
+    <p>
+        @Html.Raw(@sortedEntries[0].Body)
+    </p>
+    <a href="http://newsflashon.azurewebsites.net/Home/Nyheter/look-at-this-splendid-office">Link to Article (hårdkodad)</a>
+    <p><i>@Html.Raw(@sortedEntries[0].Date) @Html.Raw(@sortedEntries[0].Article)</i></p>
+</div>
     
 </div>
 

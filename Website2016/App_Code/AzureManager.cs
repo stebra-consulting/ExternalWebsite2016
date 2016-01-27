@@ -6,6 +6,7 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.Azure;
 using Microsoft.WindowsAzure.Storage.Table;
 using System.Net;
+using System.Text.RegularExpressions;
 /// <summary>
 /// Summary description for AzureManager
 /// </summary>
@@ -54,6 +55,10 @@ public class AzureManager
         List<StebraEntity> news = getAzure();
         news = news.OrderByDescending(o => o.IntDate).ToList();
         news[0].Image = WebUtility.HtmlDecode(news[0].Image);
+        news[0].Body = Regex.Replace(news[0].Body, @"(<img\/?[^>]+>)", @"",
+        RegexOptions.IgnoreCase);
+        news[0].Article = Regex.Replace(news[0].Article, @"(<img\/?[^>]+>)", @"",
+        RegexOptions.IgnoreCase);
         return news;
     }
 }
