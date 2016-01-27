@@ -14,13 +14,6 @@
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
 #navImg {
     height:35px;
     margin-top:-8px;
@@ -84,10 +77,6 @@ textarea {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
-
-.bg-grey {
-    background-color: #f6f6f6;
 }
 
 .container-fluid {
