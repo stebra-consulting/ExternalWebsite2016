@@ -33,4 +33,9 @@
         $(".dividers1").css("background-color", $(this).text());
     });
 
+    $("#change").click(function () {
+        $(".dividers1").css("background-color", $("#customColor").val());
+    });
+
+
 });

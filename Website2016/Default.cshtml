@@ -8,8 +8,11 @@
 <div id="helper" class="glyphicon glyphicon-cog" style="display:none;font-size:50px;"></div>
     <div id="colorPicker" style="background-color:white;height:500px;width:200px;border-radius:5px;border-color:black;border:solid;display:none">
         <p style="font-size:30px" class="text-right x">X</p>
-        <div class="thisColor" style="background-color:white">#FFFFFF</div>
+        <input id="customColor" type="text" name="Custom" value="Hex color">
+        <input id="change" type="button" name="btn" value="Change" />
+        <br /><br />
         <div class="thisColor" style="background-color:blue">#0014FF</div>
+        <div class="thisColor" style="background-color:white">#FFFFFF</div>
         <div class="thisColor" style="background-color:green">#009605</div>
         <div class="thisColor" style="background-color:black">#000000</div>
     </div>
@@ -148,20 +151,36 @@
         <br><br><br>
     </div>
 </div>
-<div class="container-fluid dividers1" style="background-color:#D6D6D6">
+<div class="container-fluid" style="background-color:#D6D6D6">
     <div id="kontakta" class="container bg-grey text-center">
         <h2>Kontaka oss</h2>
         <br><br><br>
 
         <div class="row">
-            <div class="col-lg-6 col-lg-push-3 col-sm-9 col-xs-12 form-group">
+            <div class="col-sm-5">
+                <p>Kontakta oss så återkommer vi inom kort.</p>
+                <p><span class="glyphicon glyphicon-map-marker"></span> Stockholm, SWEDEN</p>
+                <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+                <p><span class="glyphicon glyphicon-envelope"></span> info@stebra.se</p>
+            </div>
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="col-sm-6 form-group">
                     <input class="form-control" id="name" name="name" placeholder="Namn" type="text" required="">
+                    </div>
+                    <div class="col-sm-6 form-group">
                     <input class="form-control" id="email" name="email" placeholder="Email / Mobil" type="email" required="">
-                <textarea class="form-control" id="comments" name="comments" placeholder="Meddelande" rows="8"></textarea><br>
-                <button class=" btn btn-default pull-right" type="submit">Skicka meddelande</button>
+                    </div>
+                </div>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Meddelande" rows="5"></textarea><br>
+                <div class="row">
+                    <div class="col-sm-12 form-group">
+                        <button class="btn btn-default pull-right" type="submit">Send</button>
+                    </div>
                 </div>
             </div>
         </div>
+
 
     <div class="container-fluid">
 
