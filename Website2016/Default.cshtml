@@ -57,15 +57,15 @@
             <img src="@sortedEntries[0].Image" alt="firstImage" />
         </div>
         <div class="col-lg-6">
-            <h3 style="color:black">@sortedEntries[0].Title</h3>
-            <p>
-                @Html.Raw(@sortedEntries[0].Body)
-            </p>
-            <a href="http://newsflashon.azurewebsites.net/Home/Nyheter/look-at-this-splendid-office">Link to Article (hårdkodad)</a>
-            <p><i>@Html.Raw(@sortedEntries[0].Date) @Html.Raw(@sortedEntries[0].Article)</i></p>
-        </div>
-
-    </div>
+    <h3 style="color:black">@sortedEntries[0].Title</h3>
+    <p>
+        @Html.Raw(@sortedEntries[0].Body)
+    </p>
+    <a href="http://newsflashon.azurewebsites.net/Home/Nyheter/look-at-this-splendid-office">Link to Article (hårdkodad)</a>
+    <p><i>@Html.Raw(@sortedEntries[0].Date) @Html.Raw(@sortedEntries[0].Article)</i></p>
+</div>
+    
+</div>
 </div>
 <div id="vilka" class="container">
     <div class="panel panel-primary">
@@ -87,7 +87,7 @@
                     <h3>Hans, REQB-certified SCRUM master</h3>
                     <h4>Roll i teamet: Projektledare, Scrum master, kravanalytiker</h4>
                     <p>Hans Steffensson som är en av grundarna till stebra har ett decenium av erfarenhet inom IT och vet vilka processer och verktyg som behöver användas i varje given situation.</p>
-                </div>
+            </div>
 
             </div>
             <div class="col-lg-6" style="margin-bottom:30px">
@@ -113,7 +113,7 @@
                     <h3>Simon, SharePoint, Office365 Developer </h3>
                     <h4>Roll i teamet: Utvecklare​ och KodMentor</h4>
                     <p>Simon en av de bättre systemutvecklarna du någonsin kommer träffa på, har extremt lätt att ta till sig nya teknologier, och delar gärna med sig av sina erfarenheter. </p>
-                </div>
+            </div>
             </div>
             <div class="col-lg-6" style="margin-bottom:30px">
                 <div class="col-lg-12 text-center"><img src="~/Images/person.jpg" class="img-circle person" /></div>
@@ -121,15 +121,15 @@
                     <h3>Matilda, Agil Coach, SCRUM master  </h3>
                     <h4>Roll i teamet: Projektledare, Scrum master, koordinator</h4>
                     <p>Matilda Riting har över sju års erfarenhet av ledarskap och personlig coachning. Matilda är nyfiken som person och frågar hellre en gång för mycket än en gång för lite då hon hävdar att ovisshet hämmar kreativitet. </p>
-                </div>
+            </div>
             </div>
             <div class="col-lg-6" style="margin-bottom:30px">
                 <div class="col-lg-12 text-center"><img src="~/Images/person.jpg" class="img-circle person" /></div>
                 <div class="col-lg-12">
                     <h3>Alvaro, System arkitekt, .NET Developer </h3>
                     <h4>Roll i teamet: Arkitekt och Utvecklare</h4>
-                    <p>Alvaro Urbano, med en online.poker-platform i ryggen, är en väldigt skicklig utvecklare och problemlösare.Han är alltid up-to-date med allt som händer i .NET-världen. </p>
-                </div>
+                <p>Alvaro Urbano, med en online.poker-platform i ryggen, är en väldigt skicklig utvecklare och problemlösare.Han är alltid up-to-date med allt som händer i .NET-världen. </p>
+            </div>
             </div>
         </section>
     </div>
@@ -139,20 +139,31 @@
         <div class="panel-heading">
             <div class="col-lg-12"><br />
                 <h2 style="color:black">Kontakta oss</h2>
+</div>
+<div id="kontakta" class="container-fluid bg-grey">
+    <h2 class="text-center">Kontaka oss</h2>
+    <div class="row">
+        <div class="col-sm-5">
+            <p>Kontakta oss så återkommer vi inom kort.</p>
+            <p><span class="glyphicon glyphicon-map-marker"></span> Stockholm, SWEDEN</p>
+            <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+            <p><span class="glyphicon glyphicon-envelope"></span> info@stebra.se</p>
+        </div>
+        <div class="col-sm-7">
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <input class="form-control" id="name" name="name" placeholder="Namn" type="text" required="">
+                </div>
+                <div class="col-sm-6 form-group">
+                    <input class="form-control" id="email" name="email" placeholder="Email / Mobil" type="email" required="">
             </div>
         </div>
+            <textarea class="form-control" id="comments" name="comments" placeholder="Meddelande" rows="5"></textarea><br>
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <button class="btn btn-default pull-right" type="submit">Send</button>
     </div>
-    <br><br><br>
-    <div class="panel-body">
-        <section>
-
-            <div class="col-lg-6">
-                <p>adress</p>
-            </div>
-            <div class="col-lg-6">
-            </div>
-
-        </section>
+                </div>
+                 </div>
     </div>
-    <br><br><br>
 </div>
