@@ -8,9 +8,9 @@ using System.Text;
 /// <summary>
 /// Summary description for mail
 /// </summary>
-public class mail
+public class Mail
 {
-    public mail()
+    public string mail()
     {
 
 
@@ -21,12 +21,13 @@ public class mail
         client.Timeout = 10000;
         client.DeliveryMethod = SmtpDeliveryMethod.Network;
         client.UseDefaultCredentials = false;
-        client.Credentials = new System.Net.NetworkCredential("felix.freye@gmail.com", "moffeludd4");
+        client.Credentials = new System.Net.NetworkCredential("felix.freye@gmail.com", "XXX");
 
-        MailMessage mm = new MailMessage("donotreply@domain.com", "felix.freye@gmail.com", "test", "test");
+        MailMessage mm = new MailMessage("felix.freye@gmail.com", "felix.freye@stebra.se", "test", "test");
         mm.BodyEncoding = UTF8Encoding.UTF8;
         mm.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
 
         client.Send(mm);
+        return "mail sent";
     }
 }
