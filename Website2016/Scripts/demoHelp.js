@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $("h1").click(function () {
+    $("#omStebra").click(function () {
         if (!$("#helper").is(":visible")) {
 
             $("#helper").show();
@@ -8,6 +8,14 @@
 
             $("#helper").hide();
         }
+
+    });
+    $(".x").click(function () {
+        if ($("#colorPicker").is(":visible")) {
+
+            $("#colorPicker").hide();
+        }
+       
 
     });
 });
