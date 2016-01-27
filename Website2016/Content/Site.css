@@ -14,13 +14,6 @@
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
 #navImg {
     height:35px;
     margin-top:-8px;
@@ -87,10 +80,6 @@ textarea {
     margin-bottom: 0px !important;
 }
 
-.bg-grey {
-    background-color: #f6f6f6;
-}
-
 .container-fluid {
     padding: 60px 50px;
 }
@@ -98,4 +87,8 @@ textarea {
 .dividers1 {background-color:#FFFFFF;}
 
 .dividers2 {background-color:#f2f2f2;}
+
+input {
+    margin-bottom:18px !important;
+}
  
