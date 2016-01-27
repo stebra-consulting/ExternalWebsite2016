@@ -10,6 +10,17 @@
         }
 
     });
+    $("#helper").click(function () {
+        if ($("#colorPicker").is(":visible")) {
+
+            $("#colorPicker").hide();
+        }
+        else {
+            $("#colorPicker").show();
+        }
+
+
+    });
     $(".x").click(function () {
         if ($("#colorPicker").is(":visible")) {
 
@@ -18,4 +29,13 @@
        
 
     });
+    $(".thisColor").click(function () {
+        $(".dividers1").css("background-color", $(this).text());
+    });
+
+    $("#change").click(function () {
+        $(".dividers1").css("background-color", $("#customColor").val());
+    });
+
+
 });
