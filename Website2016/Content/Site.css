@@ -14,6 +14,13 @@
     white-space: normal;
 }
 
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
 #navImg {
     height:35px;
     margin-top:-8px;
@@ -77,27 +84,18 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    margin-bottom: 0px !important;
+}
+
+.bg-grey {
+    background-color: #f6f6f6;
 }
 
 .container-fluid {
     padding: 60px 50px;
 }
 
-input {
-    margin-bottom:20px !important;
-}
+.dividers1 {background-color:#FFFFFF;}
 
-.iframe-rwd  {
-position: relative;
-padding-bottom: 65.25%;
-padding-top: 30px;
-height: 0;
-overflow: hidden;
-}
-.iframe-rwd iframe {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-}
+.dividers2 {background-color:#f2f2f2;}
+ 
