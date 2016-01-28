@@ -3,9 +3,24 @@
     Page.Title = "Hello World!";
     List<StebraEntity> sortedEntries = AzureManager.sort();
 
+    var result = Request["contactForm"];
+    var name = Request["name"];
+    var email = Request["email"];
+    var comments = Request["comments"];
+
+    if (result != null)
+    {
+        <div id="isPostBack" value="true">
+            @Mail.Send(name, email, comments);
+        </div>
+        
+    }
 }
+
+
+
 <div style="position:absolute;top:50px;">
-<div id="helper" class="glyphicon glyphicon-cog" style="display:none;font-size:50px;"></div>
+    <div id="helper" class="glyphicon glyphicon-cog" style="display:none;font-size:50px;"></div>
     <div id="colorPicker" style="background-color:white;height:500px;width:200px;border-radius:5px;border-color:black;border:solid;display:none">
         <p style="font-size:30px" class="text-right x">X</p>
         <input id="customColor" type="text" name="Custom" value="Hex color">
@@ -35,18 +50,18 @@
             <p>​​Stebra Conculting levererar Moln- och konsulttjänster för att hjälpa ditt företag med dokumenthantering,  IT och Management. Teamet bakom Stebra har över tio års erfarenhet av att utveckla IT-system, kartlägga information och optimera affärsprocesser. Våra kunder är globala storföretag, myndigheter men även mindre småförtag. Vi är välrenommerade och har bland marknadens bästa kompetens inom SharePoint-lösningar och kravhantering.</p>
         </div>
     </div>
-<br />
+    <br />
 </div>
 
 
 
 
 <div class="container-fluid dividers2">
-<div class="container">
+    <div class="container">
 
-            <div class="col-lg-12">
-                <h2 style="color:black">Säljande bilder</h2>
-            </div>
+        <div class="col-lg-12">
+            <h2 style="color:black">Säljande bilder</h2>
+        </div>
 
 
         <div class="col-sm-3"><img src="~/Images/ToBeReplaced.png" /><p>Säljande text</p> </div>
@@ -54,18 +69,18 @@
         <div class="col-sm-3"><img src="~/Images/ToBeReplaced.png" /><p>Säljande text</p> </div>
         <div class="col-sm-3"><img src="~/Images/ToBeReplaced.png" /><p>Säljande text</p> </div>
 
-    <br><br><br>
-</div><br />
+        <br><br><br>
+    </div><br />
 </div>
 
 
 <div class="container-fluid dividers1">
-<div id="nyheter" class="container">
-    <!-- 1st single news -->
-            <div class="col-lg-12">
-                <br />
-                <h2 style="color:black">Senaste nytt</h2>
-            </div>
+    <div id="nyheter" class="container">
+        <!-- 1st single news -->
+        <div class="col-lg-12">
+            <br />
+            <h2 style="color:black">Senaste nytt</h2>
+        </div>
         <div class="col-lg-6 news">
             <img src="@sortedEntries[0].Image" alt="firstImage" />
         </div>
@@ -82,14 +97,14 @@
 </div>
 
 
-<div class="container-fluid dividers2" >
-<div id="vilka" class="container">
+<div class="container-fluid dividers2">
+    <div id="vilka" class="container">
         <section>
             <div class="col-lg-12">
                 <br />
                 <h2 style="color:black">Vilka vi är?</h2>
             </div>
-    <br><br><br>
+            <br><br><br>
 
             <div class="col-lg-6" style="margin-bottom:30px">
                 <div class="col-lg-12 text-center"><img src="~/Images/person.jpg" class="img-circle person" /></div>
@@ -159,23 +174,39 @@
         <div class="row">
             <div class="col-lg-6 col-lg-push-3 col-sm-9 col-xs-12 form-group">
 
-                <span class="glyphicon glyphicon-user pull-left contact-glyphicon"></span>
+                <form action="~/Default.cshtml" href="#kontakta">
+                    <span class="glyphicon glyphicon-user pull-left contact-glyphicon"></span>
                     <input class="form-control" id="name" name="name" placeholder="Namn" type="text" required="">
+                    
 
-                <span class="glyphicon glyphicon-envelope pull-left contact-glyphicon"></span>
+
+                    <span class="glyphicon glyphicon-envelope pull-left contact-glyphicon"></span>
                     <input class="form-control" id="email" name="email" placeholder="Email / Mobil" type="email" required="">
 
-                <span class="glyphicon glyphicon-comment pull-left contact-glyphicon"></span>
-                <textarea class="form-control" id="comments" name="comments" placeholder="Meddelande" rows="8"></textarea><br>
+                    <span class="glyphicon glyphicon-comment pull-left contact-glyphicon"></span>
+                    <textarea class="form-control" id="comments" name="comments" placeholder="Meddelande" rows="8"></textarea><br>
 
-                <button class=" btn btn-default pull-right" type="submit">Skicka till info@stebra.se</button>
-                </div>
+                    <button id="submitMyMessage" class="btn btn-default pull-right" type="submit" name="contactForm" value="xx">Skicka till info@stebra.se</button>
+                </form>
+
+                    
+                
+
             </div>
         </div>
-
-
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2035.9054494512975!2d18.046823816071818!3d59.317835781654864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77dd51d988d1%3A0x4b91595450bc055c!2sBr%C3%A4nnkyrkagatan+95%2C+117+26+Stockholm%2C+Sverige!5e0!3m2!1ssv!2sus!4v1453905991953" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-
     </div>
+</div>
+
+
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2035.9054494512975!2d18.046823816071818!3d59.317835781654864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f77dd51d988d1%3A0x4b91595450bc055c!2sBr%C3%A4nnkyrkagatan+95%2C+117+26+Stockholm%2C+Sverige!5e0!3m2!1ssv!2sus!4v1453905991953" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+<script type="text/javascript">
+
+    //contact us form maintain scroll position
+    if (document.getElementById('isPostBack')) {
+        window.location.hash = '#kontakta';
+        alert("Tack, vi har tagit emot ditt meddelande");
+    }
+   
+</script>
