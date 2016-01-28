@@ -38,4 +38,12 @@
     });
 
 
+
+    //Navbar Hide on click outside or inside body
+    $(".navbar-nav li a").click(function (event) {
+        $(".navbar-collapse").collapse('hide');
+    });
+    $("body").click(function (event) {
+        $(".navbar-collapse").collapse('hide');
+    });
 });
