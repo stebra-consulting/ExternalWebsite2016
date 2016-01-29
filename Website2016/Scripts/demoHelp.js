@@ -39,11 +39,15 @@
 
 
 
-    //Navbar Hide on click outside or inside body
+    //Navbar Hide on click outside 
     $(".navbar-nav li a").click(function (event) {
         $(".navbar-collapse").collapse('hide');
     });
+    //or inside body
     $("body").click(function (event) {
         $(".navbar-collapse").collapse('hide');
     });
+
+
+
 });
