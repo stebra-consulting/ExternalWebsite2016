@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
 using System.Web;
+using System.Net.Http;
 
 /// <summary>
 /// Summary description for Mail
@@ -14,22 +15,31 @@ public class Mail
     }
     public static string Send(string name, string email, string comments)
     {
-
+        var slackKey = "finns att hämta...";//Get In Stebra Slack
         try
         {
-            MailMessage mail = new MailMessage();
-            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+            //https://sendgrid.com/docs/Integrate/Code_Examples/csharp.html
+            var myMessage = new SendGrid.SendGridMessage();
+            myMessage.AddTo("simon.bergqvist.91@gmail.com");  //to whom to post
+            myMessage.From = new MailAddress("test@email.com", "Test My"); //from who
+            myMessage.Subject = "Sending with SendGrid is Fun Test"; //subject
+            myMessage.Text = "and easy to do anywhere, even with C#";//body
 
-            mail.From = new MailAddress("felix.freye@gmail.com");
-            mail.To.Add("info@stebra.se");
-            mail.Subject = "Meddelade från stebra.se";
-            mail.Body = comments + " FROM " + email;
+            var transportWeb = new SendGrid.Web(slackKey);
+            transportWeb.DeliverAsync(myMessage);//it was to slow with wait, dont spam this to much, account going to get locked then.
+            //MailMessage mail = new MailMessage();
+            //SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-            SmtpServer.Port = 587;
-            SmtpServer.Credentials = new System.Net.NetworkCredential("felix.freye@gmail.com", "XXX");
-            SmtpServer.EnableSsl = true;
+            //mail.From = new MailAddress("felix.freye@gmail.com");
+            //mail.To.Add("info@stebra.se");
+            //mail.Subject = "Meddelade från stebra.se";
+            //mail.Body = comments + " FROM " + email;
 
-            SmtpServer.Send(mail);
+            //SmtpServer.Port = 587;
+            //SmtpServer.Credentials = new System.Net.NetworkCredential("felix.freye@gmail.com", "XXX");
+            //SmtpServer.EnableSsl = true;
+
+            //SmtpServer.Send(mail);
             return "sent";
         }
         catch (Exception ex)
