@@ -209,4 +209,16 @@
         alert("Tack, vi har tagit emot ditt meddelande");
     }
 
+
+    //hover portrait images
+    var src;
+    $(".person").hover(function () {
+        src = $(this).attr('src');
+        var substring = $(this).attr('src').split('.');
+        var newSrc = substring[0] + "_hover." + substring[1];
+        $(this).attr('src', newSrc);
+    }, function(){ //change it back
+        $(this).attr('src', src);
+    });
+
 </script>
