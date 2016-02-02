@@ -50,4 +50,9 @@
 
 
 
+    //contact us form maintain scroll position
+    if (document.getElementById('isPostBack')) {
+        window.location.hash = '#kontakta';
+        alert("Tack, vi har tagit emot ditt meddelande");
+    }
 });
